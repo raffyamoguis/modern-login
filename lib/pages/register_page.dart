@@ -31,6 +31,16 @@ class RegisterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.grey[300],
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0, // Remove the shadow
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back, color: Colors.black),
+            onPressed: () {
+              Navigator.pop(context); // Navigate back to the previous page
+            },
+          ),
+        ),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Center(
@@ -60,14 +70,6 @@ class RegisterPage extends StatelessWidget {
                 MyTextField(
                   controller: fullNameController,
                   hintText: 'Full name',
-                  obscureText: false,
-                ),
-
-                const SizedBox(height: 10),
-
-                MyTextField(
-                  controller: usernameController,
-                  hintText: 'Username',
                   obscureText: false,
                 ),
 
